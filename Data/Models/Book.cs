@@ -18,5 +18,9 @@ namespace my_books.Data.Models
         public string genere { get; set; }
         public string bookAuthor { get; set; }
 
+        //navigation properties
+        public  int publisherId { get; set; }
+        public publisher publisher { get; set; }
+
     }
 }

@@ -31,5 +31,40 @@ namespace my_books.Data.Services
             _context.Books.Add(_book);
             _context.SaveChanges();
         }
+        public List<Book> getAllBooks()
+        {
+            return _context.Books.ToList();
+        }
+        public Book getAllBookById(int bookId)
+        {
+            return _context.Books.FirstOrDefault(m=>m.bookId==bookId);
+        }
+        public Book updateBookById(int bookId,bookViewModel book)
+        {
+            var _book = _context.Books.FirstOrDefault(m => m.bookId == bookId);
+            if(_book !=null)
+            {
+                _book.bookTitle = book.bookTitle;
+                _book.bookDescription = book.bookTitle;
+                _book.isRead = book.isRead;
+                _book.dateRead = book.isRead ? book.dateRead.Value : null;
+                _book.bookRate = book.bookRate;
+                _book.genere = book.genere;
+                _book.bookCoverUrl = book.bookCoverUrl;
+                _book.bookAuthor = book.bookAuthor;
+
+                _context.SaveChanges();
+            }
+            return _book;
+        }
+        public void deleteBookById(int bookId)
+        {
+            var _book = _context.Books.FirstOrDefault(m => m.bookId == bookId);
+            if (_book != null)
+            {
+                _context.Books.Remove(_book);
+                _context.SaveChanges();
+            };
+        }
     }
 }
