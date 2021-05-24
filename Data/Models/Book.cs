@@ -21,6 +21,7 @@ namespace my_books.Data.Models
         //navigation properties
         public  int publisherId { get; set; }
         public publisher publisher { get; set; }
+        public List<book_Author> book_Authors { get; set; }
 
     }
 }
