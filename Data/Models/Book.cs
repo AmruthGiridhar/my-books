@@ -16,7 +16,7 @@ namespace my_books.Data.Models
         public string bookCoverUrl { get; set; }
         public DateTime bookDateAdded { get; set; }
         public string genere { get; set; }
-        public string bookAuthor { get; set; }
+        //public string bookAuthor { get; set; }
 
         //navigation properties
         public  int publisherId { get; set; }

@@ -16,7 +16,9 @@ namespace my_books.Data.ViewModel
             public string bookCoverUrl { get; set; }
             public DateTime bookDateAdded { get; set; }
             public string genere { get; set; }
-            public string bookAuthor { get; set; }
+            //public string bookAuthor { get; set; }
 
+        public int publisherId { get; set; }
+        public List<int> authorIds { get; set; }
     }
 }

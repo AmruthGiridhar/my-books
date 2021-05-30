@@ -14,7 +14,7 @@ namespace my_books.Data.Services
         {
             _context = context;
         }
-        public void addBook(bookViewModel book)
+        public void addBookwithAuthors(bookViewModel book)
         {
             var _book = new Book()
             {
@@ -25,11 +25,23 @@ namespace my_books.Data.Services
                 bookRate = book.bookRate,
                 genere = book.genere,
                 bookCoverUrl = book.bookCoverUrl,
-                bookAuthor = book.bookAuthor,
-                bookDateAdded = DateTime.Now
+                //bookAuthor = book.bookAuthor,
+                bookDateAdded = DateTime.Now,
+                publisherId=book.publisherId
             };
             _context.Books.Add(_book);
             _context.SaveChanges();
+
+            foreach(var id in book.authorIds)
+            {
+                var _bookAuthor = new book_Author()
+                {
+                    bookId = _book.bookId,
+                    authorId = id
+                };
+                _context.books_Authors.Add(_bookAuthor);
+                _context.SaveChanges();
+            }
         }
         public List<Book> getAllBooks()
         {
@@ -51,7 +63,7 @@ namespace my_books.Data.Services
                 _book.bookRate = book.bookRate;
                 _book.genere = book.genere;
                 _book.bookCoverUrl = book.bookCoverUrl;
-                _book.bookAuthor = book.bookAuthor;
+                //_book.bookAuthor = book.bookAuthor;
 
                 _context.SaveChanges();
             }

@@ -19,10 +19,10 @@ namespace my_books.Controllers
         {
             _booksService = booksService;
         }
-        [HttpPost("add-book")]
+        [HttpPost("add-book-with-Authors")]
         public IActionResult addBook([FromBody] bookViewModel book)
         {
-            _booksService.addBook(book);
+            _booksService.addBookwithAuthors(book);
             return Ok();
         }
         [HttpGet("get-all-books")]

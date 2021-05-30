@@ -26,8 +26,8 @@ namespace my_books.Data
                         bookRate=100,
                         bookCoverUrl="http://google.com",
                         bookDateAdded=DateTime.Now.AddDays(-30),
-                        genere="movie",
-                        bookAuthor="Amruth"
+                        genere="movie"
+                        //bookAuthor="Amruth"
                     },
                     new Book()
                     {
@@ -38,8 +38,8 @@ namespace my_books.Data
                         bookRate = 55,
                         bookCoverUrl = "http://google.com",
                         bookDateAdded = DateTime.Now.AddDays(-2),
-                        genere = "drama",
-                        bookAuthor = "lakshman"
+                        genere = "drama"
+                        //bookAuthor = "lakshman"
                     },
                     new Book()
                     {
@@ -48,8 +48,8 @@ namespace my_books.Data
                         isRead = false,
                         bookCoverUrl = "http://google.com",
                         bookDateAdded = DateTime.Now,
-                        genere = "action",
-                        bookAuthor = "rama"
+                        genere = "action"
+                        //bookAuthor = "rama"
                     });
                     context.SaveChanges();
                 }
